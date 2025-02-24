@@ -1,6 +1,6 @@
 # Finance Code Generator
 
-This repository contains a **Finance Code Generator** designed to help users (departmenf of a university/division of a company) generate structured cost codes based on various criteria. The system allows users to input an **activity description**, select criteria, and generate a **structured finance code**.  
+This repository contains a **Finance Code Generator** designed to help users (department of a university/division of a company) generate structured cost codes based on various criteria. The system allows users to input an **activity description**, select criteria, and generate a **structured finance code**.  
 
 The tool supports three types of activities:  
 1. **Standard Activity** (Requires full criteria selection)  
