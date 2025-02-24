@@ -13,6 +13,7 @@ The tool supports three types of activities:
 ✔ Automatic finance code generation  
 ✔ Simple UI for easy interaction  
 ✔ JavaScript-based logic for real-time updates  
+✔ Easy to modify for your own project
 
 
 ## 🛠 How to Use
