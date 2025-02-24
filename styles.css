@@ -1,0 +1,55 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+select {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Minimal spacing above the generated code output */
+#generatedCode {
+    margin-top: 0.5rem; /* Ensures result appears directly below the button */
+    font-weight: bold;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 2rem; /* Adds some space above the footer */
+}
