@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>XXX Department<br>Finance Code Generator</h1>
+    <form id="costCodeForm">
+
+        <!-- Activity Description -->
+        <label for="activity">Activity Description:</label>
+        <input type="text" id="activity" placeholder="Describe the activity" required onchange="clearResult()">
+        
+        <!-- Initial Question for Special Activity -->
+        <label for="specialActivity">Is this a special activity?</label>
+        <select id="specialActivity" onchange="handleSpecialActivity(); clearResult();">
+            <option value="default">Please select one</option>
+            <option value="No">No</option>
+            <option value="Special1">Special Activity 1 - Directly Assign Code</option>
+            <option value="Special2">Special Activity 2 - Go to Criterion6</option>
+        </select>
+
+        <!-- Fixed Part (for special activities only) -->
+        <div id="fixedPartSection" style="display: none;">
+            <label for="fixedPart">Fixed Part:</label>
+            <select id="fixedPart" onchange="clearResult()">
+                <option value="FP1">FP1 - Option 1</option>
+                <option value="FP2">FP2 - Option 2</option>
+            </select>
+        </div>
+
+        <!-- Criterion1 -->
+        <div id="criterion1Section" style="display: none;">
+            <label for="criterion1">Criterion 1:</label>
+            <select id="criterion1" onchange="clearResult()">
+                <option value="100187">27 - General Operations</option>
+                <option value="100188">38 - Research Funding</option>
+            </select>
+        </div>
+
+        <!-- Criterion2 -->
+        <div id="criterion2Section" style="display: none;">
+            <label for="criterion2">Criterion 2:</label>
+            <select id="criterion2" onchange="clearResult()">
+                <option value="O">O - Operations</option>
+                <option value="R">R - Research</option>
+            </select>
+        </div>
+
+        <!-- Criterion3 -->
+        <div id="criterion3Section" style="display: none;">
+            <label for="criterion3">Criterion 3:</label>
+            <select id="criterion3" onchange="clearResult()">
+                <option value="001">001 - Administrative Tasks</option>
+                <option value="002">002 - Teaching-Related Costs</option>
+            </select>
+        </div>
+
+        <!-- Criterion4 -->
+        <div id="criterion4Section" style="display: none;">
+            <label for="criterion4">Criterion 4:</label>
+            <select id="criterion4" onchange="clearResult()">
+                <option value="A">A - Internal</option>
+                <option value="B">B - External</option>
+            </select>
+        </div>
+
+        <!-- Criterion5 -->
+        <div id="criterion5Section" style="display: none;">
+            <label for="criterion5">Criterion 5:</label>
+            <select id="criterion5" onchange="clearResult()">
+                <option value="X">X - Special Projects</option>
+                <option value="Y">Y - Standard Operations</option>
+            </select>
+        </div>
+
+        <!-- Criterion6 -->
+        <div id="criterion6Section" style="display: none;">
+            <label for="criterion6">Criterion 6:</label>
+            <select id="criterion6" onchange="clearResult()">
+                <option value="1001">1001 - Budget Code 1</option>
+                <option value="1002">1002 - Budget Code 2</option>
+            </select>
+        </div>
+
+        <!-- Generate Code Button -->
+        <button type="button" onclick="generateCode()">Generate Code</button>
+    </form>
+
+    <!-- Display the Generated Code and Activity -->
+    <div id="generatedCode"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tao Ma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
