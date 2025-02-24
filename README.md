@@ -46,7 +46,7 @@ Use this mode if a **fixed part code** is directly assigned:
 
 **Example Output:**
 ```plaintext
-Generated Code: 2.SpecialCode1
+Generated Code: EventA
 Activity: Administrative Expense
 ```
 
@@ -61,7 +61,7 @@ Use this mode if the finance code requires both **a fixed part and a nominal cod
 
 **Example Output:**
 ```plaintext
-Generated Code: 1.SpecialCode2.2
+Generated Code: EventB.2
 Activity: IT Maintenance
 ```
 
