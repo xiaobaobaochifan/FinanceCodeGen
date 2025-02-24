@@ -2,7 +2,7 @@ function handleSpecialActivity() {
     clearResult();
 
     const specialActivity = document.getElementById("specialActivity").value;
-    const fixedPartSection = document.getElementById("fixedPartSection");
+    const eventSection = document.getElementById("eventSection");
     const criterion1Section = document.getElementById("criterion1Section");
     const criterion2Section = document.getElementById("criterion2Section");
     const criterion3Section = document.getElementById("criterion3Section");
@@ -10,7 +10,8 @@ function handleSpecialActivity() {
     const criterion5Section = document.getElementById("criterion5Section");
     const criterion6Section = document.getElementById("criterion6Section");
 
-    fixedPartSection.style.display = "none";
+    // Hide all sections initially
+    eventSection.style.display = "none";
     criterion1Section.style.display = "none";
     criterion2Section.style.display = "none";
     criterion3Section.style.display = "none";
@@ -18,14 +19,12 @@ function handleSpecialActivity() {
     criterion5Section.style.display = "none";
     criterion6Section.style.display = "none";
 
+    // Default selection - do nothing
     if (specialActivity === "default") {
         return;
     }
 
-    if (specialActivity === "Special1" || specialActivity === "Special2") {
-        fixedPartSection.style.display = "block";
-    }
-
+    // "No" → Show all criteria selections
     if (specialActivity === "No") {
         criterion1Section.style.display = "block";
         criterion2Section.style.display = "block";
@@ -34,8 +33,11 @@ function handleSpecialActivity() {
         criterion5Section.style.display = "block";
         criterion6Section.style.display = "block";
     } else if (specialActivity === "Special1") {
-        fixedPartSection.style.display = "block";
+        // Special1: Show only event selection
+        eventSection.style.display = "block";
     } else if (specialActivity === "Special2") {
+        // Special2: Show event selection and criterion6
+        eventSection.style.display = "block";
         criterion6Section.style.display = "block";
     }
 }
@@ -44,7 +46,6 @@ function generateCode() {
     clearResult();
 
     const specialActivity = document.getElementById("specialActivity").value;
-    const fixedPart = document.getElementById("fixedPart").value;
     const activity = document.getElementById("activity").value;
 
     if (!activity) {
@@ -52,9 +53,10 @@ function generateCode() {
         return;
     }
 
-    let fullCode;
+    let fullCode = "";
 
     if (specialActivity === "No") {
+        // Generate full hierarchical code
         const criterion1 = document.getElementById("criterion1").value;
         const criterion2 = document.getElementById("criterion2").value;
         const criterion3 = document.getElementById("criterion3").value;
@@ -63,10 +65,14 @@ function generateCode() {
         const criterion6 = document.getElementById("criterion6").value;
         fullCode = `${criterion1}.${criterion2}.${criterion3}.${criterion4}.${criterion5}.${criterion6}`;
     } else if (specialActivity === "Special1") {
-        fullCode = `${fixedPart}.SpecialCode1`;
+        // Use selected event only
+        const event = document.getElementById("event").value;
+        fullCode = `${event}`;
     } else if (specialActivity === "Special2") {
+        // Use selected event and criterion6
+        const event = document.getElementById("event").value;
         const criterion6 = document.getElementById("criterion6").value;
-        fullCode = `${fixedPart}.SpecialCode2.${criterion6}`;
+        fullCode = `${event}.${criterion6}`;
     }
 
     displayGeneratedCode(fullCode, activity);

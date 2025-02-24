@@ -19,16 +19,16 @@
         <select id="specialActivity" onchange="handleSpecialActivity(); clearResult();">
             <option value="default">Please select one</option>
             <option value="No">No</option>
-            <option value="Special1">Special Activity 1 - Directly Assign Code</option>
-            <option value="Special2">Special Activity 2 - Go to Criterion6</option>
+            <option value="Special1">Special Activity 1 - Choose Event</option>
+            <option value="Special2">Special Activity 2 - Choose Event & Criterion6</option>
         </select>
 
-        <!-- Fixed Part (for special activities only) -->
-        <div id="fixedPartSection" style="display: none;">
-            <label for="fixedPart">Fixed Part:</label>
-            <select id="fixedPart" onchange="clearResult()">
-                <option value="1">Choice 1</option>
-                <option value="2">Choice 2</option>
+        <!-- Event Selection (For Special Activities) -->
+        <div id="eventSection" style="display: none;">
+            <label for="event">Select Event:</label>
+            <select id="event" onchange="clearResult()">
+                <option value="EventA">Event A</option>
+                <option value="EventB">Event B</option>
             </select>
         </div>
 
